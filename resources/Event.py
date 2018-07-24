@@ -15,6 +15,12 @@ class AllEventsResource(Resource):
                 events = events_schema.dump(events).data
                 return {"status": "success", "events": events}
 
+class FormatEventsResource(Resource):
+    def get(self, format):
+        events = Event.query.filter(Event.format == format)
+        events = events_schema.dump(events).data
+        return {"status": "success", "events": events}
+
 class EventResource(Resource):
     def get(self, event_id):
             if event_id == None:

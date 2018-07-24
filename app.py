@@ -3,6 +3,7 @@ from flask_restful import Api
 from resources.Deck import DeckResource
 from resources.Event import EventResource
 from resources.Event import AllEventsResource
+from resources.Event import FormatEventsResource
 from resources.Card import CardResource
 from resources.Card import AllCardsResource
 
@@ -12,7 +13,8 @@ api = Api(api_bp)
 # Routes
 
 api.add_resource(DeckResource, '/Deck/<string:deck_id>/')
-api.add_resource(AllEventsResource, '/Event/')
+api.add_resource(AllEventsResource, '/Events/')
 api.add_resource(EventResource, '/Event/<string:event_id>/')
+api.add_resource(FormatEventsResource, '/Events/<string:format>/')
 api.add_resource(AllCardsResource, '/Card/')
 api.add_resource(CardResource, '/Card/<string:card_id>/')

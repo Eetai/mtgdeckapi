@@ -11,3 +11,5 @@ class DeckResource(Resource):
             deck = decks_schema.dump(deck).data
         
             return {"status":"success", "data":deck}, 200
+
+# Add cards here
